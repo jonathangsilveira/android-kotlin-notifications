@@ -83,7 +83,7 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
             R.drawable.egg_icon,
             applicationContext.getString(R.string.snooze),
             snoozePendingIntent
-        )
+        ).priority = NotificationCompat.PRIORITY_HIGH
 
     // TODO: Step 2.5 set priority
 
