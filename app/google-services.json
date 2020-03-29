@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "172719852053",
+    "firebase_url": "https://egg-timer-notifications-99886.firebaseio.com",
+    "project_id": "egg-timer-notifications-99886",
+    "storage_bucket": "egg-timer-notifications-99886.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:172719852053:android:945bb27c1069be88f55c1c",
+        "android_client_info": {
+          "package_name": "com.example.android.eggtimernotifications"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "172719852053-cfdq2b0mt6mnv2lgkjkgsu7vbb7ndfmf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.eggtimernotifications",
+            "certificate_hash": "1793d48186a9b5401e4f0ab4fbf555bb3e6d2653"
+          }
+        },
+        {
+          "client_id": "172719852053-kin3k7sth57eqeubdacoj3576n123p2a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1V4jqUiotjrHoc2n5sJLCI_gwlYyKh70"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "172719852053-kin3k7sth57eqeubdacoj3576n123p2a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
