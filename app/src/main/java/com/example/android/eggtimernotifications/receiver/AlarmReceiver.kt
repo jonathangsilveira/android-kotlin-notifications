@@ -28,7 +28,7 @@ class AlarmReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
 
-        val notificationManager = systemService<NotificationManager>(context)
+        val notificationManager = context.systemService<NotificationManager>()
         notificationManager.sendNotification(
             context.getText(R.string.eggs_ready).toString(),
             context
