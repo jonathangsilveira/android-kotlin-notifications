@@ -24,12 +24,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.android.eggtimernotifications.R
 import com.example.android.eggtimernotifications.databinding.FragmentEggTimerBinding
 import com.example.android.eggtimernotifications.util.systemService
+import com.google.firebase.messaging.FirebaseMessaging
 
 class EggTimerFragment : Fragment() {
 
@@ -47,11 +49,15 @@ class EggTimerFragment : Fragment() {
         val viewModel = ViewModelProvider(this).get(EggTimerViewModel::class.java)
 
         binding.eggTimerViewModel = viewModel
-        binding.lifecycleOwner = this.viewLifecycleOwner
+        binding.lifecycleOwner = viewLifecycleOwner
 
         createChannel(
             getString(R.string.egg_notification_channel_id),
             getString(R.string.egg_notification_channel_name)
+        )
+        createChannel(
+            getString(R.string.breakfast_notification_channel_id),
+            getString(R.string.breakfast_notification_channel_name)
         )
 
         return binding.root
@@ -75,6 +81,18 @@ class EggTimerFragment : Fragment() {
             val notificationManager = requireActivity().systemService<NotificationManager>()
             notificationManager.createNotificationChannel(notificationChannel)
         }
+    }
+
+    private fun subscribeToTopic() {
+        FirebaseMessaging.getInstance()
+            .subscribeToTopic(TOPIC)
+            .addOnCompleteListener { task ->
+                val msgResId = if (task.isSuccessful)
+                    R.string.message_subscribed
+                else
+                    R.string.message_subscribe_failed
+                Toast.makeText(requireActivity(), msgResId, Toast.LENGTH_SHORT).show()
+            }
     }
 
     companion object {
